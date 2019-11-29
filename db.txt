@@ -1,0 +1,8 @@
+docker exec -it mysql mysql -uroot -p
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
+SELECT user FROM mysql.user GROUP BY user;
+CREATE USER 'atul'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'atul'@'localhost';
+flush PRIVILEGES;
+SELECT user FROM mysql.user GROUP BY user;
+create database users_database;
